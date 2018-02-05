@@ -7,32 +7,32 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./pokemon-form.component.css']
 })
 export class PokemonFormComponent {
-  personName : string;
-  personProp : string;
-  prop: string;
+  pokeName : string;
+  pokeInfo : string;
+  infoPoke: string;
   submitted = false;
   constructor(private http: Http) { }
   onSubmit(formValue) { 
     return this.http.get('https://pokeapi.co/api/v2/pokemon/'+formValue.name+'/').map( res => res.json()
     ).subscribe( (data) => {
-    this.personName = data.name;
-    if(formValue.power == "weight") {
-      this.prop = "Weight";
-      this.personProp = (
+    this.pokeName = data.name;
+    if(formValue.info == "weight") {
+      this.infoPoke = "Weight";
+      this.pokeInfo = (
       Math.round(
         (parseInt(data.weight) * 0.1)*100)/100
     ).toString() + " kg";
     }
-    if(formValue.power == "height"){
-      this.prop = "Height";
-      this.personProp = (
+    if(formValue.info == "height"){
+      this.infoPoke = "Height";
+      this.pokeInfo = (
       Math.round(
         (parseInt(data.height) * 0.1)*100)/100
     ).toString() + " m";
     } 
-    if(formValue.power == "base experience"){
-      this.prop = "Base experience";
-      this.personProp = data.base_experience;
+    if(formValue.info == "base experience"){
+      this.infoPoke = "Base experience";
+      this.pokeInfo = data.base_experience;
     } 
     this.submitted = true;  });
   }
