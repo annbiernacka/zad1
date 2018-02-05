@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .menu {
     margin-top:2%;
     margin-bottom:2%;
@@ -14,4 +15,22 @@ a:hover {
 }
 a:focus {
     color:green;
+=======
+.menu {
+    margin-top:2%;
+    margin-bottom:2%;
+}
+a {
+    color: grey;
+    text-decoration: none;
+    margin-right:5%;
+    font-size:20px;
+    text-transform: uppercase;
+}
+a:hover {
+    color: green;
+}
+a:focus {
+    color:green;
+>>>>>>> 21caaf2b22df20f8cb8807f01c82fbcaf9bbad58
 }
