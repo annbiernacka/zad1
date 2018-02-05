@@ -1,0 +1,58 @@
+<!-- {{diagnostic}} -->
+<div class="container formDiv">
+    <div [hidden]="submitted">
+      <h4>Choose Pokemon and desired information:</h4>
+      <form (ngSubmit)="onSubmit(pokemonForm.value)" #pokemonForm="ngForm">
+        <div class="form-group">
+          <select class="form-control" id="name"
+                  required
+                  ngModel name="name"
+                  #name="ngModel">
+            <option>bulbasaur</option>
+            <option>ivysaur</option>
+            <option>venusaur</option>
+            <option>charmander</option>
+            <option>charmeleon</option>
+            <option>charizard</option>
+            <option>squirtle</option>
+            <option>wartortle</option>
+            <option>blastoise</option>
+            <option>caterpie</option>
+            <option>metapod</option>
+            <option>butterfree</option>
+            <option>weedle</option>
+            <option>kakuna</option>
+            <option>beedrill</option>
+            <option>pidgey</option>
+            <option>pidgeotto</option>
+            <option>pidgeot</option>
+            <option>rattata</option>
+            <option>raticate</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <select class="form-control" id="power"
+                  required
+                  ngModel name="power"
+                  #power="ngModel">
+            <option>weight</option>
+            <option>height</option>
+            <option>base experience</option>
+          </select>
+        </div>
+  
+        <button type="submit" class="btn btn-success" [disabled]="!pokemonForm.form.valid">Submit</button>
+      </form>
+    </div>
+  
+    <div [hidden]="!submitted">
+      <h4>Selected Pokemon</h4>
+      <div class="row">
+        <div class="col-12 result">Name: <span>{{ personName }}</span></div>
+        <div class="col-12 result">{{ prop }}: <span>{{ personProp }}</span> </div>
+      </div>
+      <br>
+      <button class="btn btn-success" (click)="submitted=false">Edit</button>
+    </div>
+  </div>
