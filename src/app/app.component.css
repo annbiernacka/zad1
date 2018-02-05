@@ -1,0 +1,17 @@
+.menu {
+    margin-top:2%;
+    margin-bottom:2%;
+}
+a {
+    color: grey;
+    text-decoration: none;
+    margin-right:5%;
+    font-size:20px;
+    text-transform: uppercase;
+}
+a:hover {
+    color: green;
+}
+a:focus {
+    color:green;
+}
